@@ -1,24 +1,32 @@
-export default function Preview() {
+export default function Preview({ personal, educational, practical }) {
   return (
     <>
       <main className="preview">
         <section className="personal-section">
-          <div>name</div>
-          <div>email</div>
-          <div>phone</div>
+          <div>{personal.name}</div>
+          <div>{personal.email}</div>
+          <div>{personal.phone}</div>
         </section>
         <section className="educational-section">
-          <div>school</div>
-          <div>major</div>
-          <div>date in</div>
-          <div>date out</div>
+          <div>{educational.school}</div>
+          <div>{educational.major}</div>
+          <div>
+            {educational.dateIn} {educational.dateIn && "--"}
+            {educational.dateIn && educational.dateOut === ""
+              ? "Present"
+              : educational.dateOut}
+          </div>
         </section>
         <section className="practical-section">
-          <div>company</div>
-          <div>title</div>
-          <div>responsibility</div>
-          <div>date in</div>
-          <div>date out</div>
+          <div>{practical.ccompany}</div>
+          <div>{practical.title}</div>
+          <div>{practical.responsibility}</div>
+          <div>
+            {practical.dateIn} {practical.dateIn && "--"}
+            {practical.dateIn && practical.dateOut === ""
+              ? "Present"
+              : practical.dateOut}
+          </div>
         </section>
       </main>
     </>
