@@ -3,8 +3,8 @@ export default function Preview({ personal, educational, practical }) {
     <>
       <main className="preview">
         <section className="personal-section">
-          <div>{personal.name}</div>
-          <div className="contact-info">
+          <div className="name-div">{personal.name}</div>
+          <div className="flex-container">
             <div>{personal.email}</div>
             <div>{personal.phone}</div>
           </div>
@@ -17,7 +17,7 @@ export default function Preview({ personal, educational, practical }) {
               <div>{educational.school}</div>
             </div>
             <div>
-              {educational.dateIn} {educational.dateIn && "--"}
+              {educational.dateIn} {educational.dateIn && " - "}
               {educational.dateIn && educational.dateOut === ""
                 ? "Present"
                 : educational.dateOut}
@@ -37,7 +37,7 @@ export default function Preview({ personal, educational, practical }) {
               </div>
             </div>
             <div>
-              {practical.dateIn} {practical.dateIn && "--"}
+              {practical.dateIn} {practical.dateIn && " - "}
               {practical.dateIn && practical.dateOut === ""
                 ? "Present"
                 : practical.dateOut}

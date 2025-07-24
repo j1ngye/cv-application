@@ -4,19 +4,24 @@ import Educational from "./Educational";
 import Practical from "./Practical";
 import Preview from "./Preview";
 export default function Form() {
-  const [personal, setPersonal] = useState({ name: "", email: "", phone: "" });
+  const [personal, setPersonal] = useState({
+    name: "John Doe",
+    email: "johndoe@hello.com",
+    phone: "1-39387680",
+  });
   const [educational, setEducational] = useState({
-    school: "",
-    major: "",
-    dateIn: "",
-    dateOut: "",
+    school: "Harvard University",
+    major: "Computer Science",
+    dateIn: "Jan 2021",
+    dateOut: "Jan 2024",
   });
   const [practical, setPractical] = useState({
-    company: "",
-    title: "",
-    responsibility: "",
-    dateIn: "",
-    dateOut: "",
+    company: "Google",
+    title: "Frontend Developer",
+    responsibility:
+      "building and maintaining user interfaces for Google's web applications. This involves translating design wireframes into functional, user-friendly interfaces using technologies like HTML, CSS, and JavaScript.",
+    dateIn: "June 2024",
+    dateOut: "Jan 2025",
   });
   return (
     <>
