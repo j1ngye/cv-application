@@ -1,23 +1,62 @@
-form {
-    background-color: rgb(223, 220, 220);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-form input, label {
-    display: block;
+form {
+  background-color: rgb(223, 220, 220);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+form input,
+label {
+  display: block;
 }
 
 main {
-    background-color: rgb(176, 172, 173);
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  background-color: rgb(176, 172, 173);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
+.personal-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.personal-section div {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.personal-section .contact-info {
+  display: flex;
+  justify-content: center;
+}
+.educational-section,
+.practical-section {
+  text-align: center;
+}
+
+.flex-container {
+  display: flex;
+  text-align: start;
+  justify-content: space-between;
+}
+
+.practical-section .responsibility-div {
+  max-width: 500px;
+}
+
+.educational-section,
+.practical-section {
+  border-top: 2px solid black;
+}
 #root {
-    width: 100vw;
-    display: flex;
+  width: 100vw;
+  display: flex;
 }

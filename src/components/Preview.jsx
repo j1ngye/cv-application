@@ -4,28 +4,44 @@ export default function Preview({ personal, educational, practical }) {
       <main className="preview">
         <section className="personal-section">
           <div>{personal.name}</div>
-          <div>{personal.email}</div>
-          <div>{personal.phone}</div>
+          <div className="contact-info">
+            <div>{personal.email}</div>
+            <div>{personal.phone}</div>
+          </div>
         </section>
         <section className="educational-section">
-          <div>{educational.school}</div>
-          <div>{educational.major}</div>
-          <div>
-            {educational.dateIn} {educational.dateIn && "--"}
-            {educational.dateIn && educational.dateOut === ""
-              ? "Present"
-              : educational.dateOut}
+          <h2>Education</h2>
+          <div className="flex-container">
+            <div className="left">
+              <div>{educational.major}</div>
+              <div>{educational.school}</div>
+            </div>
+            <div>
+              {educational.dateIn} {educational.dateIn && "--"}
+              {educational.dateIn && educational.dateOut === ""
+                ? "Present"
+                : educational.dateOut}
+            </div>
           </div>
         </section>
         <section className="practical-section">
-          <div>{practical.ccompany}</div>
-          <div>{practical.title}</div>
-          <div>{practical.responsibility}</div>
-          <div>
-            {practical.dateIn} {practical.dateIn && "--"}
-            {practical.dateIn && practical.dateOut === ""
-              ? "Present"
-              : practical.dateOut}
+          <h2>Experience</h2>
+          <div className="flex-container">
+            <div className="left">
+              <div>
+                <div>{practical.company}</div>
+                <div>{practical.title}</div>
+              </div>
+              <div className="responsibility-div">
+                {practical.responsibility}
+              </div>
+            </div>
+            <div>
+              {practical.dateIn} {practical.dateIn && "--"}
+              {practical.dateIn && practical.dateOut === ""
+                ? "Present"
+                : practical.dateOut}
+            </div>
           </div>
         </section>
       </main>
