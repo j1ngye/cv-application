@@ -12,16 +12,16 @@ export default function Form() {
   const [educational, setEducational] = useState({
     school: "Harvard University",
     major: "Computer Science",
-    dateIn: "Jan 2021",
-    dateOut: "Jan 2024",
+    dateIn: formatDate("2020-07-25"),
+    dateOut: formatDate("2024-07-25"),
   });
   const [practical, setPractical] = useState({
     company: "Google",
     title: "Frontend Developer",
     responsibility:
       "building and maintaining user interfaces for Google's web applications. This involves translating design wireframes into functional, user-friendly interfaces using technologies like HTML, CSS, and JavaScript.",
-    dateIn: "June 2024",
-    dateOut: "Jan 2025",
+    dateIn: formatDate("2025-01-01"),
+    dateOut: formatDate("2025-07-25"),
   });
   return (
     <>
@@ -37,4 +37,12 @@ export default function Form() {
       />
     </>
   );
+}
+
+function formatDate(inputDate) {
+  const date = new Date(inputDate);
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    year: "numeric",
+  }).format(date);
 }
