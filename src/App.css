@@ -2,11 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-
-body {
-  background-color: #211f1f;
-  color: #ffffffe1;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 main {
@@ -24,6 +20,37 @@ form {
   display: none;
 }
 
+button {
+  width: 100px;
+  margin-top: 10px;
+  padding: 5px 10px;
+  color: white;
+  font-weight: 900;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.submit-btn {
+  background-color: rgb(4, 148, 4);
+}
+
+#edit-btn {
+  background-color: #0b0b0b;
+}
+
+main button {
+  margin-top: 50px;
+  align-self: flex-end;
+  opacity: 0.1;
+  transition: opacity 0.5s ease-in-out 0.1s;
+}
+
+main button:hover {
+  opacity: 1;
+}
+
 form h3 {
   margin-top: 20px;
 }
@@ -31,7 +58,6 @@ form h3 {
 form input,
 label {
   display: block;
-  /* color: #000000eb; */
   width: 200px;
   height: 30px;
 }
@@ -48,12 +74,12 @@ textarea {
   width: 300px;
   height: 200px;
   padding: 5px;
-  margin-top: 9px;
 }
 
 main {
   display: flex;
   flex-direction: column;
+  border-left: 2px solid rgb(187, 186, 186);
 }
 
 .personal-section {
@@ -81,24 +107,44 @@ main {
   justify-content: space-between;
 }
 
-.practical-section .responsibility-div {
-  max-width: 500px;
-}
-
 .educational-section,
 .practical-section {
-  border-top: 2px solid black;
+  border-top: 2px solid rgb(187, 186, 186);
 }
 
 #root {
   width: 100vw;
   display: flex;
   gap: 10px;
+  padding: 20px 0;
 }
 
 /* Font */
-.name-div {
+div.name-div {
   font-size: 3rem;
+}
+
+.light {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1rem;
+}
+
+.heavy {
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+label {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.4rem;
 }
 
 /* margin and padding */
@@ -117,4 +163,9 @@ main {
 
 h2 {
   margin-top: 20px;
+}
+
+.responsibility-div {
+  margin-top: 20px;
+  width: 500px;
 }

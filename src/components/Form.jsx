@@ -12,16 +12,16 @@ export default function Form() {
   const [educational, setEducational] = useState({
     school: "Harvard University",
     major: "Computer Science",
-    dateIn: formatDate("2020-07-25"),
-    dateOut: formatDate("2024-07-25"),
+    dateIn: "2020-07-25",
+    dateOut: "2024-07-25",
   });
   const [practical, setPractical] = useState({
     company: "Google",
     title: "Frontend Developer",
     responsibility:
       "building and maintaining user interfaces for Google's web applications. This involves translating design wireframes into functional, user-friendly interfaces using technologies like HTML, CSS, and JavaScript.",
-    dateIn: formatDate("2025-01-01"),
-    dateOut: formatDate("2025-07-25"),
+    dateIn: "2025-01-01",
+    dateOut: "2025-07-25",
   });
   const [isShown, setIsShown] = useState(true);
   function handleSubmit(e) {
@@ -30,11 +30,13 @@ export default function Form() {
   }
   return (
     <>
-      <form onSubmit={handleSubmit} className={isShown === false ? "hide" : ""}>
+      <form onSubmit={handleSubmit} className={!isShown ? "hide" : ""}>
         <Personal personal={personal} handleChange={setPersonal} />
         <Educational educational={educational} handleChange={setEducational} />
         <Practical practical={practical} handleChange={setPractical} />
-        <button>Submit</button>
+        <button type="submit" className="submit-btn">
+          Submit
+        </button>
       </form>
       <Preview
         personal={personal}
@@ -45,12 +47,4 @@ export default function Form() {
       />
     </>
   );
-}
-
-function formatDate(inputDate) {
-  const date = new Date(inputDate);
-  return new Intl.DateTimeFormat("en-US", {
-    month: "short",
-    year: "numeric",
-  }).format(date);
 }
