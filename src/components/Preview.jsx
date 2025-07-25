@@ -1,4 +1,10 @@
-export default function Preview({ personal, educational, practical }) {
+export default function Preview({
+  personal,
+  educational,
+  practical,
+  handleEdit,
+  isShown,
+}) {
   return (
     <>
       <main className="preview">
@@ -44,6 +50,9 @@ export default function Preview({ personal, educational, practical }) {
             </div>
           </div>
         </section>
+        <button onClick={handleEdit} className={isShown === true ? "hide" : ""}>
+          Edit
+        </button>
       </main>
     </>
   );

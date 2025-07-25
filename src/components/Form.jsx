@@ -40,6 +40,8 @@ export default function Form() {
         personal={personal}
         educational={educational}
         practical={practical}
+        handleEdit={setIsShown}
+        isShown={isShown}
       />
     </>
   );
