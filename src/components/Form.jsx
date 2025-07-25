@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { use, useState } from "react";
 import Personal from "./Personal";
 import Educational from "./Educational";
 import Practical from "./Practical";
@@ -23,12 +23,18 @@ export default function Form() {
     dateIn: formatDate("2025-01-01"),
     dateOut: formatDate("2025-07-25"),
   });
+  const [isShown, setIsShown] = useState(true);
+  function handleSubmit(e) {
+    e.preventDefault();
+    setIsShown((prev) => !prev);
+  }
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit} className={isShown === false ? "hide" : ""}>
         <Personal personal={personal} handleChange={setPersonal} />
         <Educational educational={educational} handleChange={setEducational} />
         <Practical practical={practical} handleChange={setPractical} />
+        <button>Submit</button>
       </form>
       <Preview
         personal={personal}

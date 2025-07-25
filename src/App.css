@@ -20,6 +20,10 @@ form {
   padding-left: 10px;
 }
 
+form.hide {
+  display: none;
+}
+
 form h3 {
   margin-top: 20px;
 }
